@@ -1,5 +1,6 @@
 from fastapi import APIRouter
-from .schemas import EventSchema, EventListSchema, EventCreateSchema, EventUpdateSchema
+from .models import EventModel, EventListSchema, EventCreateSchema, EventUpdateSchema
+from api.db.config import DATABASE_URL
 
 router = APIRouter()
 
@@ -15,20 +16,20 @@ def read_events() -> EventListSchema:
 # create view
 # POST /api/events
 @router.post("/")
-def create_events(payload:EventCreateSchema) -> EventSchema:
+def create_events(payload:EventCreateSchema) -> EventModel:
     data = payload.model_dump()
     return {"id": 123, **data}
 
 
 # GET /api/events/12
 @router.get("/{event_id}")
-def get_event(event_id: int) -> EventSchema:
+def get_event(event_id: int) -> EventModel:
     return {
         "id": event_id,
         }
 
 @router.put("/{event_id}")
-def update_event(event_id: int, payload:EventUpdateSchema) -> EventSchema:
+def update_event(event_id: int, payload:EventUpdateSchema) -> EventModel:
     data = payload.model_dump()
     print(data)
     return {
