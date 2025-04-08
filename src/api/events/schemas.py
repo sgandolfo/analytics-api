@@ -1,11 +1,14 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
 
 class EventSchema(BaseModel):
     id: int
+    page: Optional[str] = ""
+    description: Optional[str] = ""
 
 class EventCreateSchema(BaseModel):
     page: str
+    description: Optional[str] = ""
 
 class EventUpdateSchema(BaseModel):
     description: str
