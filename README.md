@@ -1,3 +1,4 @@
-# analytics-api
+## Docker
 
-Analytics API created following an Youtube tutorial
+- `docker build -t analytics-api -f Dockerfile .`
+- `docker run analytics-api`
