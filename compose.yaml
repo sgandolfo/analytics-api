@@ -24,7 +24,7 @@ services:
     environment:
       - POSTGRES_USER=time-user
       - POSTGRES_PASSWORD=time-pw
-      - POSTGRES_DD=timescaledb
+      - POSTGRES_DB=timescaledb
     ports:
       - "5432:5432"
     expose:
