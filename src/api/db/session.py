@@ -1,4 +1,3 @@
-import sqlmodel
 from sqlmodel import SQLModel, Session
 import timescaledb
 
