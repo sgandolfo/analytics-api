@@ -1,12 +1,12 @@
 {
   "build": {
     "builder": "DOCKERFILE",
-    "dockerfilePath": "./Dockerfile",
+    "dockerfilePath": "./Dockerfile.web",
     "watchPatterns": [
       "requirements.txt",
       "src/**",
       "railway.json",
-      "Dockerfile"
+      "Dockerfile.web"
     ]
   },
   "deploy": {
